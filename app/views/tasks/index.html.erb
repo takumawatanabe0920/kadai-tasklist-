@@ -1,33 +1,14 @@
-<h1>メッセージ一覧</h1>
-
-<% if @tasks.any? %>
- <table class="table table-striped"> 
-  <thead>
-    <tr>
-      <th>id</th>
-      <th>ステータス</th>
-      <th>コンテンツ</th>
-    </tr>
-  </thead>
-  <tbody>
-    <% @tasks.each do |task| %>
-     <tr>
-       <td><%= link_to task.id, task%></td>
-       <td><%=task.status%></td>
-       <td><%=task.content%></td>
-     </tr>
-    <% end %>
-  </tbody>
- </table>
- 
- <div>
-  <%= paginate @tasks %>
- </div>
-<% end %>
-
 <% if logged_in? %>
- <p>ログイン完了ユーザ:<%= current_user.name %></p>
- <%= link_to "新規作成ページ",new_task_path, class: 'btn btn-primary'  %>
+  <div class="row">
+    <aside class="col-md-8">
+    <%= render "tasks/tasks" %>  
+  </div>
 <% else %>
- <%= link_to 'Sign up now!', signup_path, class: 'btn btn-primary' %>
+  <div class="center jumbotron">
+    <div class="text-center">
+      <h1>Welcome to the Tasklist</h1>
+      <%= link_to 'Sign up now!', signup_path, class: 'btn btn-lg btn-primary' %>
+    </div>
+  </div>
 <% end %>
+

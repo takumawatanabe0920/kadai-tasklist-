@@ -1,4 +1,5 @@
-<div class="collapse navbar-collapse" id="bs-example-navbar-collapse-1">
+<header>
+ <div class="collapse navbar-collapse" id="bs-example-navbar-collapse-1">
     <ul class="nav navbar-nav navbar-right">
         <% if logged_in? %>
         <li><%= link_to 'Tasklist', root_url %></li>
@@ -16,4 +17,5 @@
             <li><%= link_to 'Login', login_path %></li>
        <% end %>
     </ul>
-</div>
+ </div>
+</header> 

@@ -1,4 +1,5 @@
 class SessionsController < ApplicationController
+  before_action :correct_user, only: [:show, :edit, :update]
   def new
   end
 

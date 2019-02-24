@@ -1,8 +1,8 @@
-<h1>id: <%= @task.id %>のタスク紹介ページ</h1>
+<h1><%=@task.id %>タスク紹介ページ</h1>
 
 <p>ステータス: <%= @task.status %></p>
 <p>コンテンツ:<%= @task.content %></p>
 
 
 <%= link_to "編集ページ",edit_task_path(@task), class: 'btn btn-default' %>
-<%= link_to 'このメッセージを削除する', @task, method: :delete, data: { confirm: '本当に削除してよろしいですか？' }, class: 'btn btn-danger' %>
+<%= link_to 'このタスクを削除する', @task, method: :delete, data: { confirm: '本当に削除してよろしいですか？' }, class: 'btn btn-danger' %>
